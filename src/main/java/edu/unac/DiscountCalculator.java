@@ -12,7 +12,7 @@ public class DiscountCalculator {
         return amount - (amount * discount);
     }
 
-    private void validateAmount(double amount) {
+    private void validateAmount(double amount) {//test
 
         if (amount <= 0) {
             throw new InvalidPurchaseException(
