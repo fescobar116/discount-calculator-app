@@ -46,4 +46,24 @@ public class DiscountCalculator {
 
         return 0.0;
     }
+
+    private double calculateDiscountDifferent(
+            double amount,
+            boolean premiumCustomer
+    ) {
+
+        if (premiumCustomer && amount >= 500) {
+            return 0.20;
+        }
+
+        if (premiumCustomer) {
+            return 0.10;
+        }
+
+        if (amount >= 500) {
+            return 0.05;
+        }
+
+        return 0.0;
+    }
 }
