@@ -12,11 +12,17 @@ public class DiscountCalculator {
         return amount - (amount * discount);
     }
 
-    private void validateAmount(double amount) {//test
+    private void validateAmount(double amount) {
 
         if (amount <= 0) {
             throw new InvalidPurchaseException(
                     "Amount must be greater than zero"
+            );
+        }
+
+        if (amount > 10000000) {
+            throw new InvalidPurchaseException(
+                    "Amount exceeds the limit"
             );
         }
     }
