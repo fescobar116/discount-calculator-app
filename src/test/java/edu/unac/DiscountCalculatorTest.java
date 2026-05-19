@@ -53,4 +53,13 @@ class DiscountCalculatorTest {
                 () -> calculator.calculateFinalPrice(-10, true)
         );
     }
+
+    @Test
+    void shouldThrowExceptionForTooMuchAmount() {
+
+        assertThrows(
+                InvalidPurchaseException.class,
+                () -> calculator.calculateFinalPrice(20000000, true)
+        );
+    }
 }
